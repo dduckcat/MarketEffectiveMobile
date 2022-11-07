@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            app:expandedTitleGravity="bottom"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleEnabled="false">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/menu_toolbar">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:drawablePadding="11dp"
+                    android:text="@string/zihuatanejo_gro"
+                    android:textColor="@color/base_text"
+                    android:textSize="15sp"
+                    app:drawableEndCompat="@drawable/ic_arrow_down"
+                    app:drawableStartCompat="@drawable/ic_location"
+                    app:fontFamily="@font/mark_pro" />
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="40dp"
+                android:paddingHorizontal="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/select_category"
+                    android:textColor="@color/base_text"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end|bottom"
+                    android:text="@string/view_all"
+                    android:textColor="@color/optionally"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_marginTop="8dp"
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/background"
+            app:tabIndicator="@null"
+            app:tabBackground="@drawable/selector_tab_indicator"
+
+            app:tabRippleColor="@color/white"
+            app:tabIndicatorGravity="top"
+            app:tabMaxWidth="90dp"
+            app:tabMinWidth="90dp"
+            app:tabMode="scrollable">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
