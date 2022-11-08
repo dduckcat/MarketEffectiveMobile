@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -40,7 +41,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
                 android:paddingHorizontal="10dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -70,42 +72,169 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <com.google.android.material.tabs.TabLayout
-            android:layout_marginTop="8dp"
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginTop="8dp"
             android:background="@color/background"
-            app:tabIndicator="@null"
             app:tabBackground="@drawable/selector_tab_indicator"
-
-            app:tabRippleColor="@color/white"
+            app:tabIndicator="@null"
             app:tabIndicatorGravity="top"
             app:tabMaxWidth="90dp"
             app:tabMinWidth="90dp"
-            app:tabMode="scrollable">
+            app:tabMode="scrollable"
+            app:tabRippleColor="@color/white">
 
             <com.google.android.material.tabs.TabItem
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.tabs.TabLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal">
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginEnd="11dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_searchview"
+                android:iconifiedByDefault="false"
+                android:queryHint="@string/search"
+                android:searchIcon="@drawable/ic_search"
+                android:theme="@style/TextHintColor" />
+
+            <ImageView
+                android:id="@+id/imQRCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:background="@drawable/bg_circle_optionally"
+                android:scaleType="center"
+                android:src="@drawable/ic_qr_code"
+
+                />
+        </LinearLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingHorizontal="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hot_sales"
+                    android:textColor="@color/base_text"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end|bottom"
+                    android:text="@string/see_more"
+                    android:textColor="@color/optionally"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHotSales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_hot_sales" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingHorizontal="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/best_sellers"
+                    android:textColor="@color/base_text"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end|bottom"
+                    android:text="@string/see_more"
+                    android:textColor="@color/optionally"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBestSeller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:spanCount="2"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_best_seller"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
