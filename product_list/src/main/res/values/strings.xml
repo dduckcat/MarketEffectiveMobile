@@ -20,4 +20,12 @@
     <string name="hot_sales">Hot sales</string>
     <string name="see_more">see more</string>
     <string name="best_sellers">Best Seller</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+    <string name="samsung">Samsung</string>
+    <string name="_300_500">$300 - $500</string>
+    <string name="_4_5_to_5_5_inches">4.5 to 5.5 inches</string>
 </resources>

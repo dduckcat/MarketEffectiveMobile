@@ -10,7 +10,7 @@
         android:id="@+id/imCardBackground"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:src="@drawable/img_1" />
+         />
 
     <ImageView
         android:id="@+id/imFavorite"

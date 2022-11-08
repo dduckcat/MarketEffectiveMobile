@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.market.list.R
@@ -39,7 +40,20 @@ class ProductListFragment : Fragment() {
         binding.rvBestSeller.adapter = BestSellerAdapter()
         binding.rvHotSales.adapter = HotSalesAdapter()
         setupTabItems()
+        fillData()
+        initBottomSheet()
 
+    }
+
+    private fun initBottomSheet() {
+        binding.toolbar.setOnMenuItemClickListener {
+            if (it.itemId == R.id.filterMenuItem)
+                FilterOptionsBottomSheet.show(requireActivity() as AppCompatActivity)
+            true
+        }
+    }
+
+    private fun fillData() {
         viewModel.getProductList()
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.productsStateFlow.collect {
@@ -47,7 +61,6 @@ class ProductListFragment : Fragment() {
                 hotSalesAdapter.submitList(it.home_store)
             }
         }
-
     }
 
     private fun createCustomTabItem(iconResource: Int, titleResource: Int): View {
