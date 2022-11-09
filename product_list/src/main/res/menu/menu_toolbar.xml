@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/filter"
+        android:id="@+id/filterMenuItem"
         android:icon="@drawable/ic_filters"
         android:title="@string/filters"
         app:showAsAction="ifRoom" />

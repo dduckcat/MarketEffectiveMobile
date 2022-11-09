@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="TextHintColor">
+        <item name="android:textColorHint">@color/search_query</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextBottomSheet">
+        <item name="fontFamily">@font/mark_pro</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/base_text</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item>
+
+    </style>
+
 </resources>

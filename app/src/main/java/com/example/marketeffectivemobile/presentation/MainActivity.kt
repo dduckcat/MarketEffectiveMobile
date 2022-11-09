@@ -2,10 +2,8 @@ package com.example.marketeffectivemobile.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentContainerView
-import com.example.market.list.ProductListFragment
+import com.example.market.list.ui.screens.ProductListFragment
 import com.example.marketeffectivemobile.R
-import com.example.marketeffectivemobile.data.TestData
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

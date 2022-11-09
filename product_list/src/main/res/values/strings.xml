@@ -9,4 +9,24 @@
     <string name="health">Health</string>
     <string name="books">Books</string>
     <string name="tv">TV</string>
+    <string name="search">Search</string>
+    <string name="new_item">New</string>
+    <string name="iphone_12">Iphone 12</string>
+    <string name="super_mega_rapido">Súper. Mega. Rápido.</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="_1_047">$1,047</string>
+    <string name="_1_500">$1,500</string>
+    <string name="samsung_galaxy_s20_ultra">Samsung Galaxy s20 Ultra</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+    <string name="best_sellers">Best Seller</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+    <string name="samsung">Samsung</string>
+    <string name="_300_500">$300 - $500</string>
+    <string name="_4_5_to_5_5_inches">4.5 to 5.5 inches</string>
+    <string name="explorer">Explorer</string>
 </resources>
