@@ -1,7 +1,7 @@
-package com.example.marketeffectivemobile.presentation
+package com.example.marketeffectivemobile.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.market.list.ui.screens.ProductListFragment
 import com.example.marketeffectivemobile.R
 
@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val test = findViewById<FragmentContainerView>(R.id.fragment_container_view)
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view, ProductListFragment.newInstance()).commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_view, ProductListFragment.newInstance())
+            .commit()
     }
 }

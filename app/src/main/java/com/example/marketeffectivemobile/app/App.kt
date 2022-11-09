@@ -17,7 +17,7 @@ class App : Application() {
         super.onCreate()
         initKoin()
     }
-    val testModule = module {
+    private val testModule = module {
         val moduleInstance = ProductListModule()
         single(qualifier = null) { moduleInstance.provideApi(get()) }
         factory(qualifier = null) { ProductListRepository(get()) }
