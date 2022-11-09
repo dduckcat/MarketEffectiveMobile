@@ -3,46 +3,32 @@ package com.example.market.list.ui.screens
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.market.core.base.BaseFragment
 import com.example.market.list.R
 import com.example.market.list.databinding.CustomTabitemBinding
 import com.example.market.list.databinding.FragmentProductListBinding
 import com.example.market.list.ui.adapters.BestSellerAdapter
 import com.example.market.list.ui.adapters.HotSalesAdapter
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ProductListFragment : Fragment() {
-
+class ProductListFragment :
+    BaseFragment<FragmentProductListBinding, ProductListViewModel>(ProductListViewModel::class) {
     private val bestSellerAdapter: BestSellerAdapter
         get() = binding.rvBestSeller.adapter as BestSellerAdapter
 
     private val hotSalesAdapter: HotSalesAdapter
         get() = binding.rvHotSales.adapter as HotSalesAdapter
 
-    private var _binding: FragmentProductListBinding? = null
-    private val binding get() = _binding!!
+    override fun getBinding(inflater: LayoutInflater) = FragmentProductListBinding.inflate(inflater)
 
-    private val viewModel: ProductListViewModel by viewModel()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentProductListBinding.inflate(layoutInflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initialize(savedInstanceState: Bundle?) {
         binding.rvBestSeller.adapter = BestSellerAdapter()
         binding.rvHotSales.adapter = HotSalesAdapter()
         setupTabItems()
         fillData()
         initBottomSheet()
-
     }
 
     private fun initBottomSheet() {
@@ -82,12 +68,9 @@ class ProductListFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     companion object {
         fun newInstance() = ProductListFragment()
     }
+
+
 }

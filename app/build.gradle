@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation project (":product_list")
+    implementation project (":core")
 
     // Koin
     def koin_ksp_version = "1.0.3"
