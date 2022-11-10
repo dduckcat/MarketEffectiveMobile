@@ -9,7 +9,7 @@
     <style name="TextBottomSheet">
         <item name="fontFamily">@font/mark_pro</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/base_text</item>
+        <item name="android:textColor">@color/dark_blue</item>
     </style>
 
     <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">

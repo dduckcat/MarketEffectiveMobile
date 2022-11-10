@@ -1,5 +1,6 @@
 package com.example.market.list.ui.screens
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.market.core.base.BaseViewModel
 import com.example.market.list.data.models.ProductListModel
@@ -17,7 +18,12 @@ class ProductListViewModel (private val repository: ProductListRepository) : Bas
 
     fun getProductList(){
         viewModelScope.launch {
-            _productsStateFlow.value = repository.getProductList()
+            try {
+                _productsStateFlow.value = repository.getProductList()
+            } catch (e: Exception){
+                Log.e("TAG", "getProductList: Error", )
+            }
+
         }
     }
 }

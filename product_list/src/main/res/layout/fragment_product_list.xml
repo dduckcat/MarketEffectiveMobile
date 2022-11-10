@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,7 +34,7 @@
                     android:layout_gravity="center|top"
                     android:drawablePadding="11dp"
                     android:text="@string/zihuatanejo_gro"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="15sp"
                     app:drawableEndCompat="@drawable/ic_arrow_down"
                     app:drawableStartCompat="@drawable/ic_location"
@@ -52,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/select_category"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/mark_pro" />
@@ -164,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/hot_sales"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/mark_pro" />
@@ -202,7 +203,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/best_sellers"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/mark_pro" />
@@ -261,7 +262,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/ic_purchases" />
+            android:src="@drawable/ic_my_cart"/>
 
         <ImageView
             android:layout_width="match_parent"

@@ -64,7 +64,7 @@
             android:fontFamily="@font/sf_pro_display_bold"
             android:text="@string/buy_now"
             android:textAllCaps="false"
-            android:textColor="@color/base_text"
+            android:textColor="@color/dark_blue"
             android:textSize="12sp"
             android:theme="@style/TextHintColor" />
     </LinearLayout>

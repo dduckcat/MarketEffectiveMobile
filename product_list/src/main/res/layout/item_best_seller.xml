@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_1_047"
-                android:textColor="@color/base_text"
+                android:textColor="@color/dark_blue"
                 android:textSize="16sp"
                 app:fontFamily="@font/mark_pro" />
 
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:text="@string/samsung_galaxy_s20_ultra"
-            android:textColor="@color/base_text"
+            android:textColor="@color/dark_blue"
             android:textSize="10sp"
             app:fontFamily="@font/mark_pro" />
     </LinearLayout>

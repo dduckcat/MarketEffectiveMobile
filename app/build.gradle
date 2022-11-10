@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation project (":product_list")
+    implementation project (":product_details")
     implementation project (":core")
 
     // Koin

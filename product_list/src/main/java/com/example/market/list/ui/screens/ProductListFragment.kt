@@ -33,8 +33,7 @@ class ProductListFragment :
 
     private fun initBottomSheet() {
         binding.toolbar.setOnMenuItemClickListener {
-            if (it.itemId == R.id.filterMenuItem)
-                FilterOptionsBottomSheet.show(requireActivity() as AppCompatActivity)
+            if (it.itemId == R.id.filterMenuItem) FilterOptionsBottomSheet.show(requireActivity() as AppCompatActivity)
             true
         }
     }
@@ -65,7 +64,6 @@ class ProductListFragment :
         getTabAt(2)?.customView = createCustomTabItem(R.drawable.ic_health, R.string.health)
         getTabAt(3)?.customView = createCustomTabItem(R.drawable.ic_books, R.string.books)
         getTabAt(4)?.customView = createCustomTabItem(R.drawable.ic_tv, R.string.tv)
-
     }
 
     companion object {

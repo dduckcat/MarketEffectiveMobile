@@ -7,6 +7,7 @@
     <color name="search_query">#80010035</color>
     <color name="grey_text">#CCCCCC</color>
     <color name="grey_stroke">#DCDCDC</color>
+    <color name="unselected">#80000000</color>
     <color name="transparent">#00DCDCDC</color>
-    <color name="red">#E10909</color>
+    <color name="background_checked">#1A505050</color>
 </resources>
