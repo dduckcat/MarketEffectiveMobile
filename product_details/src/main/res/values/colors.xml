@@ -10,4 +10,6 @@
     <color name="unselected">#80000000</color>
     <color name="transparent">#00DCDCDC</color>
     <color name="background_checked">#1A505050</color>
+    <color name="grey_text_selector">#8D8D8D</color>
+
 </resources>
