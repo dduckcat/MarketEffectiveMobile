@@ -8,13 +8,13 @@ This application takes data from the server about the goods and displays them on
 
 # Stack:
 
-Kotlin
-MVVM
-Multimodule
-Koin
-Navigation Component
-Coroutines
-StateFlow
-Retrofit
-Glide
-CarouselRecyclerView
+ Kotlin
+ MVVM
+ Multimodule
+ Koin
+ Navigation Component
+ Coroutines
+ StateFlow
+ Retrofit
+ Glide
+ CarouselRecyclerView
