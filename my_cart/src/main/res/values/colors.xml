@@ -15,5 +15,6 @@
     <color name="background_checked">#1A505050</color>
     <color name="grey_text_selector">#8D8D8D</color>
     <color name="gold">#FFB800</color>
+    <color name="blue_ripple">#5D5D8A</color>
 
 </resources>

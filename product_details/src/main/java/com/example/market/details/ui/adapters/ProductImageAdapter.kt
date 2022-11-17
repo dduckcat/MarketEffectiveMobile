@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.example.market.core.base.BaseAdapter
+import com.example.market.details.R
 import com.example.market.details.databinding.ItemProductImageBinding
 
 class ProductImageAdapter : BaseAdapter<String, ItemProductImageBinding>(DiffUtilCallback) {
@@ -14,7 +15,11 @@ class ProductImageAdapter : BaseAdapter<String, ItemProductImageBinding>(DiffUti
 
     override fun bindViewHolder(holder: ViewHolder, data: String) {
         holder.binding.apply {
-            Glide.with(imCardBackground).load(data).into(imCardBackground)
+            Glide.with(imCardBackground)
+                .load(data)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_error)
+                .into(imCardBackground)
         }
     }
 

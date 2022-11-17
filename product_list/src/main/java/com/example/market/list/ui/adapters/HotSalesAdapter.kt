@@ -7,6 +7,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.example.market.core.base.BaseAdapter
+import com.example.market.list.R
 import com.example.market.list.data.models.ProductListModel
 import com.example.market.list.databinding.ItemHotSalesBinding
 
@@ -23,7 +24,11 @@ class HotSalesAdapter (private val clickListener: HotSalesClickListener) :
             tvSubTitle.text = data.subtitle
             if (data.is_new) tvIconNew.isVisible = true
             else tvIconNew.isInvisible = true
-            Glide.with(imCardBackground).load(data.picture).into(imCardBackground)
+            Glide.with(imCardBackground)
+                .load(data.picture)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_error)
+                .into(imCardBackground)
         }
         holder.itemView.setOnClickListener {
             clickListener.hotSalesClick()

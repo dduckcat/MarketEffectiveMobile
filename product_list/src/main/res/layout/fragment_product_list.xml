@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -185,9 +184,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvHotSales"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_hot_sales" />
@@ -250,7 +249,7 @@
             android:layout_weight="0.7"
             android:drawableStart="@drawable/ic_dot"
             android:gravity="center"
-            android:paddingHorizontal="40dp"
+            android:paddingHorizontal="30dp"
             android:text="@string/explorer"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -263,7 +262,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/ic_my_cart"/>
+            android:background="@drawable/ripple_dark_blue"
+            android:src="@drawable/ic_my_cart" />
 
         <ImageView
             android:layout_width="match_parent"

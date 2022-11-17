@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
+import com.example.market.cart.R
 import com.example.market.cart.databinding.ItemCartElemBinding
 import com.example.market.core.base.BaseAdapter
+import com.example.market.core.extensions.formatTwoNumAfterDot
 import com.example.market.my_cart.data.models.MyCartModel
-import java.text.NumberFormat
 import java.util.*
 
 class ElemCartAdapter : BaseAdapter<MyCartModel.BasketItem, ItemCartElemBinding>(DiffUtilCallback){
@@ -22,9 +23,11 @@ class ElemCartAdapter : BaseAdapter<MyCartModel.BasketItem, ItemCartElemBinding>
         holder.binding.apply {
             Glide.with(imProductImage)
                 .load(data.images)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_error)
                 .into(imProductImage)
             tvProductName.text = data.title
-            tvPrice.text = NumberFormat.getCurrencyInstance(Locale.US).format(data.price)
+            tvPrice.text = data.price.formatTwoNumAfterDot(Locale.US)
         }
     }
 

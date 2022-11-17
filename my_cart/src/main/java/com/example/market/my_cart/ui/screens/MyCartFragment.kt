@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
 import com.example.market.cart.databinding.FragmentMyCartBinding
 import com.example.market.core.base.BaseFragment
+import com.example.market.core.extensions.formatTwoNumAfterDot
 import com.example.market.my_cart.data.models.MyCartModel
 import com.example.market.my_cart.ui.adapters.ElemCartAdapter
 import com.example.shared_navigation.popBackStack
 import kotlinx.coroutines.launch
-import java.text.NumberFormat
 import java.util.*
 
 class MyCartFragment :
@@ -39,7 +39,7 @@ class MyCartFragment :
     private fun fillData(data: MyCartModel) = with(data){
         with(binding) {
             adapter.submitList(data.basket)
-            tvTotal.text = NumberFormat.getCurrencyInstance(Locale.US).format(total)
+            tvTotal.text = total.formatTwoNumAfterDot(Locale.US)
             tvDelivery.text = delivery
         }
     }

@@ -13,6 +13,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.setMargins
 import androidx.lifecycle.lifecycleScope
 import com.example.market.core.base.BaseFragment
+import com.example.market.core.extensions.formatTwoNumAfterDot
 import com.example.market.details.R
 import com.example.market.details.data.models.ProductDetailsModel
 import com.example.market.details.databinding.FragmentProsuctDetailsBinding
@@ -20,7 +21,6 @@ import com.example.market.details.ui.adapters.ProductImageAdapter
 import com.example.shared_navigation.navigate
 import com.example.shared_navigation.popBackStack
 import kotlinx.coroutines.launch
-import java.text.NumberFormat
 import java.util.*
 
 class ProductDetailsFragment :
@@ -66,7 +66,7 @@ class ProductDetailsFragment :
             tvCamera.text = camera
             tvRAM.text = ssd
             tvSD.text = sd
-            tvPrice.text = NumberFormat.getCurrencyInstance(Locale.US).format(price)
+            tvPrice.text = price.formatTwoNumAfterDot(Locale.US)
             ratingBar.rating = rating.toFloat()
             imLike.setImageResource(
                 if (isFavorites) R.drawable.ic_fill_like else R.drawable.ic_like
