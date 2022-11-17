@@ -6,7 +6,7 @@ This application takes data from the server about the goods and displays them on
 * product details screen (only about one product)
 * shopping cart screen
 
-Stack:
+# Stack:
 
 Kotlin
 MVVM
