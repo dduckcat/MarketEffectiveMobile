@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/llAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imGoBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ripple_dark_blue"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:text="@string/productDetails"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/mark_pro" />
+
+        <ImageView
+            android:id="@+id/imMyCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ripple_orange"
+            android:padding="10dp"
+            android:src="@drawable/ic_my_cart" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/llAppBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+                android:id="@+id/rvProductImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="top"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_product_image" />
+
+            <LinearLayout
+                android:id="@+id/llProductInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/bg_product_info"
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="20dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProductName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/galaxy_note_20_ultra"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/mark_pro" />
+
+                    <ImageView
+                        android:id="@+id/imLike"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:background="@drawable/bg_ripple_dark_blue"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_like" />
+
+                </LinearLayout>
+
+                <RatingBar
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:progressTint="@color/gold"
+                    />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:tabIndicatorColor="@color/optionally"
+                    app:tabRippleColor="@color/white"
+                    app:tabSelectedTextColor="@color/dark_blue"
+                    app:tabTextAppearance="@style/TextTabs"
+                    app:tabTextColor="@color/unselected">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:padding="-30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/features" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <LinearLayout
+                    android:id="@+id/llProductSpecifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCPU"
+                        style="@style/TextProductInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exynos_990"
+                        app:drawableTopCompat="@drawable/ic_processor" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCamera"
+                        style="@style/TextProductInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_108_12_mp"
+                        app:drawableTopCompat="@drawable/ic_camera" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRAM"
+                        style="@style/TextProductInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_8_gb"
+                        app:drawableTopCompat="@drawable/ic_ram" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSD"
+                        style="@style/TextProductInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_256_gb"
+                        app:drawableTopCompat="@drawable/ic_rom" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/select_color_and_capacity"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1.4">
+
+                        <RadioGroup
+                            android:id="@+id/colorsRadioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+
+                    </HorizontalScrollView>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1">
+
+                        <RadioGroup
+                            android:id="@+id/memoryRadioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp"
+                    android:background="@drawable/bg_optionally_button"
+                    android:padding="14dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextBottomButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_to_cart" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrice"
+                        style="@style/TextBottomButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

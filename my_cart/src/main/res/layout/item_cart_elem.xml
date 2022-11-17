@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_blue"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/imProductImage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_weight="0.7"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:text="@string/galaxy_note_20_ultra"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/mark_pro"
+            tools:ignore="NestedWeights" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="2"
+            android:text="@string/_3000_00"
+            android:textColor="@color/optionally"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/mark_pro" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_plus_minus"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:padding="13dp"
+            android:src="@drawable/ic_minus"
+            tools:ignore="NestedWeights" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="@string/_1"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:fontFamily="@font/mark_pro_bold" />
+
+        <ImageView
+            android:id="@+id/imPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:padding="9dp"
+            android:src="@drawable/ic_plus" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imDelete"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+
+        android:src="@drawable/ic_basket" />
+
+</LinearLayout>

@@ -32,10 +32,10 @@
                     android:layout_gravity="center|top"
                     android:drawablePadding="11dp"
                     android:text="@string/zihuatanejo_gro"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="15sp"
                     app:drawableEndCompat="@drawable/ic_arrow_down"
-                    app:drawableStartCompat="@drawable/ic_location"
+                    app:drawableStartCompat="@drawable/ic_location_orange"
                     app:fontFamily="@font/mark_pro" />
             </com.google.android.material.appbar.MaterialToolbar>
 
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/select_category"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/mark_pro" />
@@ -87,27 +87,22 @@
             app:tabRippleColor="@color/white">
 
             <com.google.android.material.tabs.TabItem
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -140,9 +135,7 @@
                 android:layout_weight="9"
                 android:background="@drawable/bg_circle_optionally"
                 android:scaleType="center"
-                android:src="@drawable/ic_qr_code"
-
-                />
+                android:src="@drawable/ic_qr_code" />
         </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -170,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/hot_sales"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/mark_pro" />
@@ -191,8 +184,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvHotSales"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_hot_sales" />
@@ -208,7 +202,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/best_sellers"
-                    android:textColor="@color/base_text"
+                    android:textColor="@color/dark_blue"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/mark_pro" />
@@ -236,37 +230,40 @@
                 tools:listitem="@layout/item_best_seller" />
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
-        android:paddingHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="bottom"
         android:layout_margin="4dp"
         android:background="@drawable/bg_dark_blue_bottombar"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.7"
-            android:paddingHorizontal="40dp"
             android:drawableStart="@drawable/ic_dot"
             android:gravity="center"
+            android:paddingHorizontal="30dp"
             android:text="@string/explorer"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
             app:fontFamily="@font/mark_pro" />
 
         <ImageView
+            android:id="@+id/imMyCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/ic_purchases" />
+            android:background="@drawable/ripple_dark_blue"
+            android:src="@drawable/ic_my_cart" />
 
         <ImageView
             android:layout_width="match_parent"

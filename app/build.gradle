@@ -38,7 +38,14 @@ android {
 }
 
 dependencies {
+    implementation project (":my_cart")
     implementation project (":product_list")
+    implementation project (":product_details")
+    implementation project (":core")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
 
     // Koin
     def koin_ksp_version = "1.0.3"

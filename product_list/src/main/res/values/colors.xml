@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="base_text">#010035</color>
+    <color name="dark_blue">#010035</color>
     <color name="background">#F5F5F5</color>
     <color name="optionally">#FF6E4E</color>
     <color name="white">#FFFFFF</color>
     <color name="search_query">#80010035</color>
     <color name="grey_text">#CCCCCC</color>
     <color name="grey_stroke">#DCDCDC</color>
+    <color name="blue_ripple">#5D5D8A</color>
     <color name="transparent">#00DCDCDC</color>
+    <color name="red">#E10909</color>
 </resources>

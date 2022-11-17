@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_blue">#010035</color>
+    <color name="background">#F5F5F5</color>
+    <color name="optionally">#FF6E4E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="search_query">#80010035</color>
+    <color name="grey_text">#CCCCCC</color>
+    <color name="grey_stroke">#DCDCDC</color>
+    <color name="unselected">#80000000</color>
+    <color name="transparent">#00DCDCDC</color>
+    <color name="background_checked">#1A505050</color>
+    <color name="grey_text_selector">#8D8D8D</color>
+    <color name="gold">#FFB800</color>
+    <color name="blue_ripple">#5D5D8A</color>
+</resources>

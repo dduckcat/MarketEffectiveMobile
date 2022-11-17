@@ -1,48 +1,41 @@
 package com.example.market.list.ui.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.market.core.base.BaseAdapter
 import com.example.market.list.R
 import com.example.market.list.data.models.ProductListModel
 import com.example.market.list.databinding.ItemHotSalesBinding
 
-class HotSalesAdapter :
-    ListAdapter<ProductListModel.HotSalesModel, HotSalesAdapter.BestSellerViewHolder>(
-        DiffUtilCallBack
-    ) {
+class HotSalesAdapter (private val clickListener: HotSalesClickListener) :
+    BaseAdapter<ProductListModel.HotSalesModel, ItemHotSalesBinding>(DiffUtilCallBack) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_hot_sales, parent, false)
-        return BestSellerViewHolder(view)
-    }
+    override fun getBinding(
+        inflater: LayoutInflater, parent: ViewGroup, viewType: Int
+    ) = ItemHotSalesBinding.inflate(inflater, parent, false)
 
-    override fun onBindViewHolder(holder: BestSellerViewHolder, position: Int) {
-        val elem = currentList[position]
-        holder.bind(elem)
-    }
-
-    class BestSellerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val binding = ItemHotSalesBinding.bind(view)
-
-        fun bind(elem: ProductListModel.HotSalesModel) = with(binding) {
-            tvTitle.text = elem.title
-            tvSubTitle.text = elem.subtitle
-            if (elem.is_new) tvIconNew.isVisible = true
+    override fun bindViewHolder(holder: ViewHolder, data: ProductListModel.HotSalesModel) {
+        holder.binding.apply {
+            tvTitle.text = data.title
+            tvSubTitle.text = data.subtitle
+            if (data.is_new) tvIconNew.isVisible = true
             else tvIconNew.isInvisible = true
-            Glide.with(imCardBackground).load(elem.picture).into(imCardBackground)
+            Glide.with(imCardBackground)
+                .load(data.picture)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_error)
+                .into(imCardBackground)
+        }
+        holder.itemView.setOnClickListener {
+            clickListener.hotSalesClick()
         }
     }
 
     private object DiffUtilCallBack : DiffUtil.ItemCallback<ProductListModel.HotSalesModel>() {
-
         override fun areItemsTheSame(
             oldItem: ProductListModel.HotSalesModel, newItem: ProductListModel.HotSalesModel
         ) = oldItem.id == newItem.id
@@ -50,5 +43,9 @@ class HotSalesAdapter :
         override fun areContentsTheSame(
             oldItem: ProductListModel.HotSalesModel, newItem: ProductListModel.HotSalesModel
         ) = oldItem == newItem
+    }
+
+    interface HotSalesClickListener {
+        fun hotSalesClick()
     }
 }

@@ -18,3 +18,5 @@ include ':core'
 include ':product_list'
 include ':product_details'
 include ':my_cart'
+
+include ':shared_navigation'
