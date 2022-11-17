@@ -9,7 +9,7 @@ import com.example.market.list.R
 import com.example.market.list.data.models.ProductListModel
 import com.example.market.list.databinding.ItemBestSellerBinding
 
-class BestSellerAdapter :
+class BestSellerAdapter (private val clickListener: BestSellerClickListener) :
     BaseAdapter<ProductListModel.BestSellerModel, ItemBestSellerBinding>(DiffUtilCallBack) {
 
     override fun getBinding(
@@ -27,6 +27,9 @@ class BestSellerAdapter :
             )
             Glide.with(imCardBackground).load(data.picture).into(imCardBackground)
         }
+        holder.itemView.setOnClickListener {
+            clickListener.bestSellerClick()
+        }
     }
 
     private object DiffUtilCallBack : DiffUtil.ItemCallback<ProductListModel.BestSellerModel>() {
@@ -38,5 +41,9 @@ class BestSellerAdapter :
         override fun areContentsTheSame(
             oldItem: ProductListModel.BestSellerModel, newItem: ProductListModel.BestSellerModel
         ) = oldItem == newItem
+    }
+
+    interface BestSellerClickListener {
+        fun bestSellerClick()
     }
 }

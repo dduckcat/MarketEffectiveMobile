@@ -10,7 +10,7 @@ import com.example.market.core.base.BaseAdapter
 import com.example.market.list.data.models.ProductListModel
 import com.example.market.list.databinding.ItemHotSalesBinding
 
-class HotSalesAdapter :
+class HotSalesAdapter (private val clickListener: HotSalesClickListener) :
     BaseAdapter<ProductListModel.HotSalesModel, ItemHotSalesBinding>(DiffUtilCallBack) {
 
     override fun getBinding(
@@ -25,6 +25,9 @@ class HotSalesAdapter :
             else tvIconNew.isInvisible = true
             Glide.with(imCardBackground).load(data.picture).into(imCardBackground)
         }
+        holder.itemView.setOnClickListener {
+            clickListener.hotSalesClick()
+        }
     }
 
     private object DiffUtilCallBack : DiffUtil.ItemCallback<ProductListModel.HotSalesModel>() {
@@ -35,5 +38,9 @@ class HotSalesAdapter :
         override fun areContentsTheSame(
             oldItem: ProductListModel.HotSalesModel, newItem: ProductListModel.HotSalesModel
         ) = oldItem == newItem
+    }
+
+    interface HotSalesClickListener {
+        fun hotSalesClick()
     }
 }

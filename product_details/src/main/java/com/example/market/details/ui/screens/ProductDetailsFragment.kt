@@ -17,6 +17,8 @@ import com.example.market.details.R
 import com.example.market.details.data.models.ProductDetailsModel
 import com.example.market.details.databinding.FragmentProsuctDetailsBinding
 import com.example.market.details.ui.adapters.ProductImageAdapter
+import com.example.shared_navigation.navigate
+import com.example.shared_navigation.popBackStack
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.util.*
@@ -38,6 +40,14 @@ class ProductDetailsFragment :
         }
 
         observeAPI()
+
+        binding.imMyCart.setOnClickListener {
+            navigate(R.id.action_productDetailsFragment_to_myCartFragment)
+        }
+
+        binding.imGoBack.setOnClickListener {
+            popBackStack()
+        }
     }
 
     private fun observeAPI() {
@@ -124,10 +134,4 @@ class ProductDetailsFragment :
         gradientDrawable.setColor(color)
         return gradientDrawable
     }
-
-
-    companion object {
-        fun newInstance() = ProductDetailsFragment()
-    }
-
 }

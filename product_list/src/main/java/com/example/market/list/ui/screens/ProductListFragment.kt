@@ -12,10 +12,12 @@ import com.example.market.list.databinding.CustomTabitemBinding
 import com.example.market.list.databinding.FragmentProductListBinding
 import com.example.market.list.ui.adapters.BestSellerAdapter
 import com.example.market.list.ui.adapters.HotSalesAdapter
+import com.example.shared_navigation.navigate
 import kotlinx.coroutines.launch
 
 class ProductListFragment :
-    BaseFragment<FragmentProductListBinding, ProductListViewModel>(ProductListViewModel::class) {
+    BaseFragment<FragmentProductListBinding, ProductListViewModel>(ProductListViewModel::class),
+    BestSellerAdapter.BestSellerClickListener, HotSalesAdapter.HotSalesClickListener {
     private val bestSellerAdapter: BestSellerAdapter
         get() = binding.rvBestSeller.adapter as BestSellerAdapter
 
@@ -30,11 +32,14 @@ class ProductListFragment :
         fillData()
         initBottomSheet()
 
+        binding.imMyCart.setOnClickListener {
+            navigate(R.id.action_productListFragment_to_myCartFragment)
+        }
     }
 
-    private fun initAdapters(){
-        binding.rvBestSeller.adapter = BestSellerAdapter()
-        binding.rvHotSales.adapter = HotSalesAdapter()
+    private fun initAdapters() {
+        binding.rvBestSeller.adapter = BestSellerAdapter(this)
+        binding.rvHotSales.adapter = HotSalesAdapter(this)
         PagerSnapHelper().attachToRecyclerView(binding.rvHotSales)
 
     }
@@ -73,9 +78,11 @@ class ProductListFragment :
         getTabAt(4)?.customView = createCustomTabItem(R.drawable.ic_tv, R.string.tv)
     }
 
-    companion object {
-        fun newInstance() = ProductListFragment()
+    override fun bestSellerClick() {
+        navigate(R.id.action_productListFragment_to_productDetailsFragment)
     }
 
-
+    override fun hotSalesClick() {
+        navigate(R.id.action_productListFragment_to_productDetailsFragment)
+    }
 }

@@ -25,7 +25,6 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:navigationIcon="@drawable/ic_location"
                 app:menu="@menu/menu_toolbar">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -37,7 +36,7 @@
                     android:textColor="@color/dark_blue"
                     android:textSize="15sp"
                     app:drawableEndCompat="@drawable/ic_arrow_down"
-                    app:drawableStartCompat="@drawable/ic_location"
+                    app:drawableStartCompat="@drawable/ic_location_orange"
                     app:fontFamily="@font/mark_pro" />
             </com.google.android.material.appbar.MaterialToolbar>
 
@@ -259,6 +258,7 @@
             app:fontFamily="@font/mark_pro" />
 
         <ImageView
+            android:id="@+id/imMyCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"

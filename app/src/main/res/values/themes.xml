@@ -1,4 +1,4 @@
-<resources >
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.MarketEffectiveMobile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -13,4 +13,27 @@
         <item name="android:statusBarColor">@color/dark_blue</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@null</item>
+        <item name="colorSecondaryVariant">@null</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+                <item name="android:statusBarColor">@color/dark_blue</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.MarketEffectiveMobile.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MarketEffectiveMobile.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MarketEffectiveMobile.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

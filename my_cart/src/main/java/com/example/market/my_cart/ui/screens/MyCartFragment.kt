@@ -7,6 +7,7 @@ import com.example.market.cart.databinding.FragmentMyCartBinding
 import com.example.market.core.base.BaseFragment
 import com.example.market.my_cart.data.models.MyCartModel
 import com.example.market.my_cart.ui.adapters.ElemCartAdapter
+import com.example.shared_navigation.popBackStack
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.util.*
@@ -22,6 +23,9 @@ class MyCartFragment :
     override fun initialize(savedInstanceState: Bundle?) {
         binding.rvMyCard.adapter = ElemCartAdapter()
         observeAPI()
+        binding.imGoBack.setOnClickListener {
+            popBackStack()
+        }
     }
 
     private fun observeAPI() {
@@ -38,9 +42,5 @@ class MyCartFragment :
             tvTotal.text = NumberFormat.getCurrencyInstance(Locale.US).format(total)
             tvDelivery.text = delivery
         }
-    }
-
-    companion object {
-        fun newInstance() = MyCartFragment()
     }
 }

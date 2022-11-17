@@ -35,8 +35,8 @@ android {
 }
 
 dependencies {
-
     implementation project(":core")
+    implementation project(":shared_navigation")
 
     implementation 'com.github.sparrow007:carouselrecyclerview:1.2.5'
 
