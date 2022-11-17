@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.market.core.base.BaseFragment
 import com.example.market.list.R
 import com.example.market.list.databinding.CustomTabitemBinding
@@ -24,11 +25,18 @@ class ProductListFragment :
     override fun getBinding(inflater: LayoutInflater) = FragmentProductListBinding.inflate(inflater)
 
     override fun initialize(savedInstanceState: Bundle?) {
-        binding.rvBestSeller.adapter = BestSellerAdapter()
-        binding.rvHotSales.adapter = HotSalesAdapter()
+        initAdapters()
         setupTabItems()
         fillData()
         initBottomSheet()
+
+    }
+
+    private fun initAdapters(){
+        binding.rvBestSeller.adapter = BestSellerAdapter()
+        binding.rvHotSales.adapter = HotSalesAdapter()
+        PagerSnapHelper().attachToRecyclerView(binding.rvHotSales)
+
     }
 
     private fun initBottomSheet() {
@@ -39,7 +47,6 @@ class ProductListFragment :
     }
 
     private fun fillData() {
-        viewModel.getProductList()
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.productsStateFlow.collect {
                 bestSellerAdapter.submitList(it.best_seller)

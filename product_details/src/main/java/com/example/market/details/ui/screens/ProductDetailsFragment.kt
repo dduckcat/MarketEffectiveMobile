@@ -1,4 +1,4 @@
-package com.example.market.details.ui
+package com.example.market.details.ui.screens
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
@@ -11,24 +11,60 @@ import androidx.appcompat.widget.AppCompatRadioButton
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.setMargins
+import androidx.lifecycle.lifecycleScope
 import com.example.market.core.base.BaseFragment
 import com.example.market.details.R
+import com.example.market.details.data.models.ProductDetailsModel
 import com.example.market.details.databinding.FragmentProsuctDetailsBinding
+import com.example.market.details.ui.adapters.ProductImageAdapter
+import kotlinx.coroutines.launch
+import java.text.NumberFormat
+import java.util.*
 
 class ProductDetailsFragment :
     BaseFragment<FragmentProsuctDetailsBinding, ProductDetailsViewModel>(ProductDetailsViewModel::class) {
 
-    private val listColors =
-        listOf("#010035", "#772D03", "#E10909", "#010035", "#772D03", "#E10909")
-    private val listMemories =
-        listOf("64 GB", "128 GB", "256 GB", "512 GB", "1 TB")
+    private val adapter: ProductImageAdapter
+        get() = binding.rvProductImage.adapter as ProductImageAdapter
 
     override fun getBinding(inflater: LayoutInflater) =
         FragmentProsuctDetailsBinding.inflate(inflater)
 
     override fun initialize(savedInstanceState: Bundle?) {
-        initColorsRadioGroup(listColors)
-        initMemoryRadioGroup(listMemories)
+        binding.rvProductImage.apply {
+            adapter = ProductImageAdapter()
+            setInfinite(true)
+            setIntervalRatio(0.8f)
+        }
+
+        observeAPI()
+    }
+
+    private fun observeAPI() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.detailsStateFlow.collect {
+                fillLayout(it)
+
+            }
+        }
+    }
+
+    private fun fillLayout(data: ProductDetailsModel) = with(data) {
+        with(binding) {
+            tvProductName.text = title
+            tvCPU.text = CPU
+            tvCamera.text = camera
+            tvRAM.text = ssd
+            tvSD.text = sd
+            tvPrice.text = NumberFormat.getCurrencyInstance(Locale.US).format(price)
+            ratingBar.rating = rating.toFloat()
+            imLike.setImageResource(
+                if (isFavorites) R.drawable.ic_fill_like else R.drawable.ic_like
+            )
+        }
+        adapter.submitList(images)
+        initColorsRadioGroup(color)
+        initMemoryRadioGroup(capacity)
     }
 
     private fun initMemoryRadioGroup(memories: List<String>) {
@@ -49,13 +85,12 @@ class ProductDetailsFragment :
                 height = (30 * destiny).toInt()
                 setMargins(15)
                 textSize = 13F
-                setText(text)
+                val text2 = "$text GB"
+                setText(text2)
                 typeface = ResourcesCompat.getFont(requireContext(), R.font.mark_pro)
                 setTextColor(
                     ResourcesCompat.getColorStateList(
-                        resources,
-                        R.color.selector_text_memory_rb,
-                        requireContext().theme
+                        resources, R.color.selector_text_memory_rb, requireContext().theme
                     )
                 )
             }
@@ -81,8 +116,9 @@ class ProductDetailsFragment :
     }
 
     private fun createColor(color: Int): GradientDrawable {
-        val layerDrawable =
-            ContextCompat.getDrawable(requireContext(), R.drawable.bg_color_radio_button) as LayerDrawable
+        val layerDrawable = ContextCompat.getDrawable(
+            requireContext(), R.drawable.bg_color_radio_button
+        ) as LayerDrawable
         val gradientDrawable =
             layerDrawable.findDrawableByLayerId(R.id.layer_id) as GradientDrawable
         gradientDrawable.setColor(color)

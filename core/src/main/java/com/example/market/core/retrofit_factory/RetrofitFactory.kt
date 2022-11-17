@@ -1,4 +1,4 @@
-package com.example.market.list.data.rest
+package com.example.market.core.retrofit_factory
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

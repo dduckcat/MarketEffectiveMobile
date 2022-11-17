@@ -31,5 +31,10 @@ abstract class BaseFragment<V : ViewBinding, VM : BaseViewModel>(clazz: KClass<V
         initialize(savedInstanceState)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     abstract fun initialize(savedInstanceState: Bundle?)
 }

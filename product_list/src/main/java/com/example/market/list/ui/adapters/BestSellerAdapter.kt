@@ -12,34 +12,6 @@ import com.example.market.list.databinding.ItemBestSellerBinding
 class BestSellerAdapter :
     BaseAdapter<ProductListModel.BestSellerModel, ItemBestSellerBinding>(DiffUtilCallBack) {
 
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerViewHolder {
-//        val view =
-//            LayoutInflater.from(parent.context).inflate(R.layout.item_best_seller, parent, false)
-//        return BestSellerViewHolder(view)
-//    }
-//
-//    override fun onBindViewHolder(holder: BestSellerViewHolder, position: Int) {
-//        val elem = currentList[position]
-//        holder.bind(elem)
-//    }
-//
-//    class BestSellerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-//        private val binding = ItemBestSellerBinding.bind(view)
-//
-//        fun bind(elem: ProductListModel.BestSellerModel) = with(binding) {
-//            tvPriceDiscount.text = elem.price_without_discount.toString()
-//            tvPriceWithoutDiscount.text = elem.discount_price.toString()
-//            tvTitle.text = elem.title
-//            imFavorite.setImageResource(
-//                if (elem.is_favorites) R.drawable.ic_like_active
-//                else R.drawable.ic_like_inactive
-//            )
-//            Glide.with(imCardBackground)
-//                .load(elem.picture)
-//                .into(imCardBackground)
-//        }
-//    }
-
     override fun getBinding(
         inflater: LayoutInflater, parent: ViewGroup, viewType: Int
     ) = ItemBestSellerBinding.inflate(inflater, parent, false)

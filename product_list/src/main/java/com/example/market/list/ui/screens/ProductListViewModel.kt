@@ -16,7 +16,11 @@ class ProductListViewModel (private val repository: ProductListRepository) : Bas
     private var _productsStateFlow = MutableStateFlow(ProductListModel.EMPTY)
     val productsStateFlow: StateFlow<ProductListModel> = _productsStateFlow
 
-    fun getProductList(){
+    init {
+        getProductList()
+    }
+
+    private fun getProductList(){
         viewModelScope.launch {
             try {
                 _productsStateFlow.value = repository.getProductList()

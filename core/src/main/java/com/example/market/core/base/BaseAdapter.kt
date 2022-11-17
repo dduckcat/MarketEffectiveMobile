@@ -13,6 +13,9 @@ abstract class BaseAdapter<T : Any, V : ViewBinding>(diffUtil: DiffUtil.ItemCall
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(getBinding(LayoutInflater.from(parent.context), parent, viewType))
 
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+//        ViewHolder(getBinding())
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val elem = currentList[position]
             bindViewHolder(holder, elem)

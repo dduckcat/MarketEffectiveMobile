@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation project (":my_cart")
     implementation project (":product_list")
     implementation project (":product_details")
     implementation project (":core")
