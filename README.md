@@ -22,14 +22,16 @@ _______
 
 # Screenshots:
 
-![dfvdf](www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodfon.ru%2Fwallpaper%2Fabstraktsiia-antisfera-vodovorot-krasok-kartinka-chernyi-fon.html&psig=AOvVaw3PlNQt4-P9TzXrNR3YDZvg&ust=1668745915818000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNiy1Y2xtPsCFQAAAAAdAAAAABAE)
-
 * ProductListFtagment:
-![](https://disk.yandex.ru/client/disk/Скриншоты%20проектов%20/MarketEffectiveMobile?idApp=client&dialog=slider&idDialog=%2Fdisk%2FСкриншоты%20проектов%20%2FMarketEffectiveMobile%2FProductListFragment.png)
+
+<img width="380" alt="ProductListFragment" src="https://user-images.githubusercontent.com/105695767/202357470-0cd68033-21dd-40a8-a1bc-536620e9c8d5.png">
+
 
 * ProductDetailsFragment
-![](https://disk.yandex.ru/client/disk/Скриншоты%20проектов%20/MarketEffectiveMobile?idApp=client&dialog=slider&idDialog=%2Fdisk%2FСкриншоты%20проектов%20%2FMarketEffectiveMobile%2FProductDetailsFragment.png)
+
+<img width="379" alt="ProductDetailsFragment" src="https://user-images.githubusercontent.com/105695767/202357938-706e2a75-db1d-4cab-aa15-256766f7c87d.png">
+
 
 * MyCartFragment
-![](https://disk.yandex.ru/client/disk/Скриншоты%20проектов%20/MarketEffectiveMobile?idApp=client&dialog=slider&idDialog=%2Fdisk%2FСкриншоты%20проектов%20%2FMarketEffectiveMobile%2FMyCartFragment.png)
 
+<img width="382" alt="MyCartFragment" src="https://user-images.githubusercontent.com/105695767/202358000-a85e9fe6-5099-44a1-8908-668db9c18e6d.png">
