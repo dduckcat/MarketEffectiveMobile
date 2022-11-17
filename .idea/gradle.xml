@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/my_cart" />
             <option value="$PROJECT_DIR$/product_details" />
             <option value="$PROJECT_DIR$/product_list" />
+            <option value="$PROJECT_DIR$/shared_navigation" />
           </set>
         </option>
       </GradleProjectSettings>

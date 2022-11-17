@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_blue"
+    tools:context=".ui.SplashScreenActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_orange_circle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/ecommerce_concept"
+        android:textColor="@color/white"
+        app:fontFamily="@font/mark_pro_bold"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginStart="50dp"/>
+
+</FrameLayout>
