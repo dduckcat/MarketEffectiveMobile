@@ -22,7 +22,7 @@ _______
 
 # Screenshots:
 
-![dfvdf](google.com/url?sa=i&url=https%3A%2F%2Fwww.goodfon.ru%2Fwallpaper%2Fabstraktsiia-antisfera-vodovorot-krasok-kartinka-chernyi-fon.html&psig=AOvVaw3PlNQt4-P9TzXrNR3YDZvg&ust=1668745915818000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNiy1Y2xtPsCFQAAAAAdAAAAABAE)
+![dfvdf](www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodfon.ru%2Fwallpaper%2Fabstraktsiia-antisfera-vodovorot-krasok-kartinka-chernyi-fon.html&psig=AOvVaw3PlNQt4-P9TzXrNR3YDZvg&ust=1668745915818000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNiy1Y2xtPsCFQAAAAAdAAAAABAE)
 
 * ProductListFtagment:
 ![](https://disk.yandex.ru/client/disk/Скриншоты%20проектов%20/MarketEffectiveMobile?idApp=client&dialog=slider&idDialog=%2Fdisk%2FСкриншоты%20проектов%20%2FMarketEffectiveMobile%2FProductListFragment.png)
