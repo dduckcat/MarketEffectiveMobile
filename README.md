@@ -19,6 +19,10 @@ _______
  * Retrofit
  * Glide
  * CarouselRecyclerView
+ 
+# Screen recording
+
+https://disk.yandex.ru/i/wyjiGdrN-W7fmA
 
 # Screenshots:
 
